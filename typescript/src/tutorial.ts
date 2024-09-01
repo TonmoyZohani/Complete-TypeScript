@@ -251,3 +251,20 @@
 
 // printStaffDetails(alice);
 // printStaffDetails(modon);
+
+type Book = { id: number; name: string; price: number };
+
+const book1: Book = {
+  id: 1,
+  name: "Lal Sontrash",
+  price: 50,
+};
+
+const book2: Book & { discount: number } = {
+  id: 1,
+  name: "Lal Sontrash",
+  price: 50,
+  discount: 0.15,
+};
+
+console.log(book2);
