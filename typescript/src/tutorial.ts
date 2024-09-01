@@ -282,6 +282,8 @@ interface Book {
   title: string;
   authon: string;
   genre?: string;
+  printAuthor(): void;
+  printTitle(message: string): string;
 }
 
 const deepWork: Book = {
@@ -289,13 +291,21 @@ const deepWork: Book = {
   title: "Lal Sontrash",
   authon: "Mohiuddin Ahmed",
   genre: "History",
+  printAuthor() {
+    console.log(`${this.authon} is the author`);
+  },
+  printTitle(message) {
+    return `${this.title} is an ${message}`;
+  },
 };
 
-const deepWork2: Book = {
-  isbn: 5345455554,
-  title: "Ek Egaro",
-  authon: "Mohiuddin Ahmed",
-};
+// const deepWork2: Book = {
+//   isbn: 5345455554,
+//   title: "Ek Egaro",
+//   authon: "Mohiuddin Ahmed",
+// };
 
 console.log(deepWork);
-console.log(deepWork2);
+deepWork.printAuthor();
+console.log(deepWork.printTitle("awsome book"));
+// console.log(deepWork2);
