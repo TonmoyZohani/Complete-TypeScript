@@ -1,0 +1,253 @@
+// interface someValue {
+//   name: string;
+//   id: number;
+// }
+
+// let someObj: someValue = {
+//   name: "Tonmoy",
+//   id: 153,
+// };
+
+// console.log(someObj)
+
+// let awesomeName: string = "shakeAndBake";
+// awesomeName = awesomeName.toUpperCase();
+// console.log(awesomeName);
+
+// let amount: number = 10;
+// let age: number = 19;
+// console.log(amount);
+
+// let isOlder: boolean = age < 18;
+
+// let isAwesome: boolean = true;
+// console.log(isAwesome);
+// console.log(isOlder);
+
+// let requestStatus: "success" | "pending" | "reject" = "pending";
+// requestStatus = "success";
+
+// console.log(requestStatus);
+
+// let notSure: any = 4;
+// notSure = "This is a game";
+// console.log(notSure);
+
+// notSure =false;
+// console.log(notSure);
+
+// const books = ["1984", "Brave New World", "Fahrenheit 451"];
+
+// let foodBank: string | undefined;
+
+// for (let book of books) {
+//   if (book === "1984") {
+//     foodBank = book;
+//     foodBank = foodBank.toUpperCase();
+//     break;
+//   }
+// }
+
+// console.log(foodBank?.length);
+
+// let prices:number[] =[100,75,42];
+// let fruits:string[] = ['Apple','Litchi','Orange'];
+
+// let mixedArray:(string | number)[] = [1,'two',3];
+// mixedArray.push("Three");
+
+// console.log(mixedArray);
+
+//*********************Objects*************************/
+
+// let person: { name: string; id: number; age: number } = {
+//   name: "Tonmoy",
+//   id: 15454,
+//   age: 15,
+// };
+
+// person.name = "Silmun";
+// console.log(person);
+
+// type Car = {
+//   brand: string;
+//   isBlack: boolean;
+//   price: number;
+// };
+
+// let car: Car = {
+//   brand: "Ford",
+//   isBlack: true,
+//   price: 5000,
+// };
+
+// console.log(car);
+
+// interface Student {
+//   name: string;
+//   id: number;
+//   isAdult: boolean;
+// }
+
+// let student: Student = {
+//   name: "Karim",
+//   id: 565,
+//   isAdult: true,
+// };
+
+// console.log(student);
+
+// let book = { title: "book", cost: 20 };
+// let pen = { title: "pen", cost: 5 };
+// let notebook = { title: "notebook" };
+
+// let items: { readonly title: string; cost?: number }[] = [book, pen, notebook];
+// console.log(items);
+
+// let product1 = { title: "Shirt", price: 20 };
+// let product2 = { title: "Pants" };
+
+// let products: { title: string; price?: number }[] = [product1, product2];
+
+// console.log(products);
+
+//*********************Functions*************************/
+
+// function printHi(name: string) {
+//   console.log(`Hello,${name}`);
+// }
+
+// printHi("Tonmoy");
+
+// function calculateDiscount(price: number): number {
+//   // price.toUpperCase();
+//   const hasDiscount = true;
+//   if (hasDiscount) {
+//     return price;
+//     // return 'Discount Applied';
+//   }
+//   return price * 0.9;
+// }
+
+// const finalPrice = calculateDiscount(200);
+// console.log(finalPrice);
+
+// const names: string[] = ["John", "Jane", "Jim", "Jill"];
+
+// function isNameInList(name: string): boolean {
+//   return names.includes(name);
+// }
+
+// let nameToCheck = "Johnny";
+
+// if (isNameInList(nameToCheck)) {
+//   console.log(`${nameToCheck} is in the list`);
+// } else {
+//   console.log(`${nameToCheck} is not in the list`);
+// }
+
+// function calculatePrice(price: number, discount?: number) {
+//   return price - (discount | 0);
+// }
+
+// console.log(calculatePrice(100,5))
+
+// function sum(message: string, ...numbers: number[]): string {
+//   let summation = numbers.reduce((acc, curr) => acc + curr, 0);
+
+//   return `${message} ${summation}`;
+// }
+
+// console.log(sum("The Sum Is:", 1, 2, 3, 4, 5));
+
+// function processInput(input: string | number) {
+//   if (typeof input === "number") {
+//     console.log(input * 2);
+//   } else {
+//     console.log(input.toUpperCase());
+//   }
+// }
+
+// processInput(10);
+// processInput("Hello");
+
+// function createStudent(student: { id: number; name: string }): void {
+//   console.log(`Hello ${student.name.toUpperCase()}!!!`);
+// }
+
+// const newStudent = {
+//   id: 5,
+//   name: "Tonmoy",
+// };
+
+// createStudent(newStudent);
+
+// function processData(input:string|number,config:{reverse:boolean}={reverse:false}):string | number{
+//   if (typeof input ==="number"){
+//     return input*input
+//   }else{
+//     return config?.reverse?
+//   }
+// }
+
+// type stringOrNumber = string | number;
+// let value: stringOrNumber;
+
+// value = "Red";
+// value = 1;
+
+// console.log(value);
+
+// type Theme = "light" | "dark";
+
+// let theme: Theme;
+
+// theme = "light";
+// theme = "dark";
+
+type Employee = {
+  id: number;
+  name: string;
+  department: string;
+};
+
+type Manager = {
+  id: number;
+  name: string;
+  employees: Employee[];
+};
+
+type Staff = Employee | Manager;
+
+function printStaffDetails(staff: Staff): void {
+  if ("employees" in staff) {
+    console.log(
+      `${staff.name} is a manager of ${staff.employees.length} employees.`
+    );
+  } else {
+    console.log(
+      `${staff.name} is an employee in the ${staff.department} department.`
+    );
+  }
+}
+
+const alice: Employee = {
+  id: 1,
+  name: "Alice",
+  department: "Sales",
+};
+
+const tonmoy: Employee = {
+  id: 1,
+  name: "Tonmoy",
+  department: "Tech",
+};
+
+const modon: Manager = {
+  id: 2,
+  name: "Damra Modon",
+  employees: [alice, tonmoy],
+};
+
+printStaffDetails(alice);
+printStaffDetails(modon);
