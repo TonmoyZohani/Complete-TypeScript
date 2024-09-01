@@ -277,27 +277,27 @@
 
 // let tiger: Animal = { [propName]: 5 };
 
-interface Book {
-  readonly isbn: number;
-  title: string;
-  authon: string;
-  genre?: string;
-  printAuthor(): void;
-  printTitle(message: string): string;
-}
+// interface Book {
+//   readonly isbn: number;
+//   title: string;
+//   authon: string;
+//   genre?: string;
+//   printAuthor(): void;
+//   printTitle(message: string): string;
+// }
 
-const deepWork: Book = {
-  isbn: 5345465454,
-  title: "Lal Sontrash",
-  authon: "Mohiuddin Ahmed",
-  genre: "History",
-  printAuthor() {
-    console.log(`${this.authon} is the author`);
-  },
-  printTitle(message) {
-    return `${this.title} is an ${message}`;
-  },
-};
+// const deepWork: Book = {
+//   isbn: 5345465454,
+//   title: "Lal Sontrash",
+//   authon: "Mohiuddin Ahmed",
+//   genre: "History",
+//   printAuthor() {
+//     console.log(`${this.authon} is the author`);
+//   },
+//   printTitle(message) {
+//     return `${this.title} is an ${message}`;
+//   },
+// };
 
 // const deepWork2: Book = {
 //   isbn: 5345455554,
@@ -305,7 +305,30 @@ const deepWork: Book = {
 //   authon: "Mohiuddin Ahmed",
 // };
 
-console.log(deepWork);
-deepWork.printAuthor();
-console.log(deepWork.printTitle("awsome book"));
+// console.log(deepWork);
+// deepWork.printAuthor();
+// console.log(deepWork.printTitle("awsome book"));
 // console.log(deepWork2);
+
+interface Computer {
+  readonly id: number;
+  brand: string;
+  ram: number;
+  storage?: number;
+  upgradeRam(increseAmnt: number): number;
+}
+
+const laptop: Computer = {
+  id: 1,
+  brand: "Samsung",
+  ram: 8,
+  upgradeRam(increseAmnt) {
+    this.ram += increseAmnt;
+    return this.ram;
+  },
+};
+
+laptop.storage = 256;
+laptop.upgradeRam(4);
+
+console.log(laptop);
