@@ -333,27 +333,65 @@
 
 // console.log(laptop);
 
-interface Student {
-  id: number;
+// interface Student {
+//   id: number;
+//   name: string;
+//   department: string;
+// }
+
+// interface Faculty extends Student {
+//   facId: number;
+// }
+
+// const student: Student = {
+//   id: 123,
+//   name: "Tonmoy",
+//   department: "CSE",
+// };
+
+// const teacher: Faculty = {
+//   id: 124,
+//   name: "Zahir",
+//   department: "CSE",
+//   facId: 5,
+// };
+
+// console.log(teacher);
+
+interface Person {
   name: string;
-  department: string;
 }
 
-interface Faculty extends Student {
-  facId: number;
+interface DogOwner extends Person {
+  dogName: string;
 }
 
-const student: Student = {
-  id: 123,
-  name: "Tonmoy",
-  department: "CSE",
-};
+interface Manager extends Person {
+  managePeople(): void;
+  delegateTasks(): void;
+}
 
-const teacher: Faculty = {
-  id: 124,
-  name: "Zahir",
-  department: "CSE",
-  facId: 5,
-};
+function getEmployee(): Person | DogOwner | Manager {
+  const random = Math.random();
 
-console.log(teacher);
+  if (random < 0.33) {
+    return {
+      name: "Tonmoy",
+    };
+  } else if (random < 0.66) {
+    return {
+      name: "Karim",
+      dogName: "Sara",
+    };
+  } else {
+    return {
+      name: "John",
+      managePeople: () => console.log("Managing people..."),
+      delegateTasks: () => console.log("Delegating tasks..."),
+    };
+  }
+}
+
+const employee: Person | DogOwner | Manager = getEmployee();
+
+console.log(employee);
