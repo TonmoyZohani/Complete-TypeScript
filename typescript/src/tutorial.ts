@@ -269,10 +269,33 @@
 
 // console.log(book2);
 
-const propName = 'age';
+// const propName = 'age';
 
-type Animal = {
-  [propName]: number;
+// type Animal = {
+//   [propName]: number;
+// };
+
+// let tiger: Animal = { [propName]: 5 };
+
+interface Book {
+  readonly isbn: number;
+  title: string;
+  authon: string;
+  genre?: string;
+}
+
+const deepWork: Book = {
+  isbn: 5345465454,
+  title: "Lal Sontrash",
+  authon: "Mohiuddin Ahmed",
+  genre: "History",
 };
 
-let tiger: Animal = { [propName]: 5 };
+const deepWork2: Book = {
+  isbn: 5345455554,
+  title: "Ek Egaro",
+  authon: "Mohiuddin Ahmed",
+};
+
+console.log(deepWork);
+console.log(deepWork2);
