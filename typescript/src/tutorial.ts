@@ -310,25 +310,50 @@
 // console.log(deepWork.printTitle("awsome book"));
 // console.log(deepWork2);
 
-interface Computer {
-  readonly id: number;
-  brand: string;
-  ram: number;
-  storage?: number;
-  upgradeRam(increseAmnt: number): number;
+// interface Computer {
+//   readonly id: number;
+//   brand: string;
+//   ram: number;
+//   storage?: number;
+//   upgradeRam(increseAmnt: number): number;
+// }
+
+// const laptop: Computer = {
+//   id: 1,
+//   brand: "Samsung",
+//   ram: 8,
+//   upgradeRam(increseAmnt) {
+//     this.ram += increseAmnt;
+//     return this.ram;
+//   },
+// };
+
+// laptop.storage = 256;
+// laptop.upgradeRam(4);
+
+// console.log(laptop);
+
+interface Student {
+  id: number;
+  name: string;
+  department: string;
 }
 
-const laptop: Computer = {
-  id: 1,
-  brand: "Samsung",
-  ram: 8,
-  upgradeRam(increseAmnt) {
-    this.ram += increseAmnt;
-    return this.ram;
-  },
+interface Faculty extends Student {
+  facId: number;
+}
+
+const student: Student = {
+  id: 123,
+  name: "Tonmoy",
+  department: "CSE",
 };
 
-laptop.storage = 256;
-laptop.upgradeRam(4);
+const teacher: Faculty = {
+  id: 124,
+  name: "Zahir",
+  department: "CSE",
+  facId: 5,
+};
 
-console.log(laptop);
+console.log(teacher);
