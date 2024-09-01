@@ -358,40 +358,53 @@
 
 // console.log(teacher);
 
-interface Person {
-  name: string;
+// interface Person {
+//   name: string;
+// }
+
+// interface DogOwner extends Person {
+//   dogName: string;
+// }
+
+// interface Manager extends Person {
+//   managePeople(): void;
+//   delegateTasks(): void;
+// }
+
+// function getEmployee(): Person | DogOwner | Manager {
+//   const random = Math.random();
+
+//   if (random < 0.33) {
+//     return {
+//       name: "Tonmoy",
+//     };
+//   } else if (random < 0.66) {
+//     return {
+//       name: "Karim",
+//       dogName: "Sara",
+//     };
+//   } else {
+//     return {
+//       name: "John",
+//       managePeople: () => console.log("Managing people..."),
+//       delegateTasks: () => console.log("Delegating tasks..."),
+//     };
+//   }
+// }
+
+// const employee: Person | DogOwner | Manager = getEmployee();
+// console.log(employee);
+
+let person: [string, number] = ["John", 25];
+console.log(person[0]);
+console.log(person[1]);
+
+let john: [string, number?] = ["John"];
+
+function getPerson(): [string, number] {
+  return ["Tonmoy", 28];
 }
 
-interface DogOwner extends Person {
-  dogName: string;
-}
-
-interface Manager extends Person {
-  managePeople(): void;
-  delegateTasks(): void;
-}
-
-function getEmployee(): Person | DogOwner | Manager {
-  const random = Math.random();
-
-  if (random < 0.33) {
-    return {
-      name: "Tonmoy",
-    };
-  } else if (random < 0.66) {
-    return {
-      name: "Karim",
-      dogName: "Sara",
-    };
-  } else {
-    return {
-      name: "John",
-      managePeople: () => console.log("Managing people..."),
-      delegateTasks: () => console.log("Delegating tasks..."),
-    };
-  }
-}
-
-const employee: Person | DogOwner | Manager = getEmployee();
-
-console.log(employee);
+let randomPerson = getPerson();
+console.log(randomPerson[0]);
+console.log(randomPerson[1])
