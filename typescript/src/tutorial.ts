@@ -205,49 +205,49 @@
 // theme = "light";
 // theme = "dark";
 
-type Employee = {
-  id: number;
-  name: string;
-  department: string;
-};
+// type Employee = {
+//   id: number;
+//   name: string;
+//   department: string;
+// };
 
-type Manager = {
-  id: number;
-  name: string;
-  employees: Employee[];
-};
+// type Manager = {
+//   id: number;
+//   name: string;
+//   employees: Employee[];
+// };
 
-type Staff = Employee | Manager;
+// type Staff = Employee | Manager;
 
-function printStaffDetails(staff: Staff): void {
-  if ("employees" in staff) {
-    console.log(
-      `${staff.name} is a manager of ${staff.employees.length} employees.`
-    );
-  } else {
-    console.log(
-      `${staff.name} is an employee in the ${staff.department} department.`
-    );
-  }
-}
+// function printStaffDetails(staff: Staff): void {
+//   if ("employees" in staff) {
+//     console.log(
+//       `${staff.name} is a manager of ${staff.employees.length} employees.`
+//     );
+//   } else {
+//     console.log(
+//       `${staff.name} is an employee in the ${staff.department} department.`
+//     );
+//   }
+// }
 
-const alice: Employee = {
-  id: 1,
-  name: "Alice",
-  department: "Sales",
-};
+// const alice: Employee = {
+//   id: 1,
+//   name: "Alice",
+//   department: "Sales",
+// };
 
-const tonmoy: Employee = {
-  id: 1,
-  name: "Tonmoy",
-  department: "Tech",
-};
+// const tonmoy: Employee = {
+//   id: 1,
+//   name: "Tonmoy",
+//   department: "Tech",
+// };
 
-const modon: Manager = {
-  id: 2,
-  name: "Damra Modon",
-  employees: [alice, tonmoy],
-};
+// const modon: Manager = {
+//   id: 2,
+//   name: "Damra Modon",
+//   employees: [alice, tonmoy],
+// };
 
-printStaffDetails(alice);
-printStaffDetails(modon);
+// printStaffDetails(alice);
+// printStaffDetails(modon);
