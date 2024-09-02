@@ -395,16 +395,36 @@
 // const employee: Person | DogOwner | Manager = getEmployee();
 // console.log(employee);
 
-let person: [string, number] = ["John", 25];
-console.log(person[0]);
-console.log(person[1]);
+// let person: [string, number] = ["John", 25];
+// console.log(person[0]);
+// console.log(person[1]);
 
-let john: [string, number?] = ["John"];
+// let john: [string, number?] = ["John"];
 
-function getPerson(): [string, number] {
-  return ["Tonmoy", 28];
+// function getPerson(): [string, number] {
+//   return ["Tonmoy", 28];
+// }
+
+// let randomPerson = getPerson();
+// console.log(randomPerson[0]);
+// console.log(randomPerson[1])
+
+enum ServerResponseStatus {
+  Success = 200,
+  Error = "Error",
 }
 
-let randomPerson = getPerson();
-console.log(randomPerson[0]);
-console.log(randomPerson[1])
+interface ServerResponse {
+  result: ServerResponseStatus;
+  data: string[];
+}
+
+function getServerResponse(): ServerResponse {
+  return {
+    result: ServerResponseStatus.Success,
+    data: ["first item", "second item"],
+  };
+}
+
+const response: ServerResponse = getServerResponse();
+console.log(response);
