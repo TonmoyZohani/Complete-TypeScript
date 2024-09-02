@@ -440,28 +440,49 @@
 //   }
 // });
 
-enum UserRole {
-  Admin,
-  Manager,
-  Employee,
-}
+// enum UserRole {
+//   Admin,
+//   Manager,
+//   Employee,
+// }
 
-type User = {
-  id: number;
+// type User = {
+//   id: number;
+//   name: string;
+//   role: UserRole;
+//   contact: [string, string];
+// };
+
+// function createUser(user: User): User {
+//   return user;
+// }
+
+// const user: User = createUser({
+//   id: 1,
+//   name: "Tonmoy Zohani",
+//   role: UserRole.Employee,
+//   contact: ["zohani@gmail.com", "zohani0804"],
+// });
+
+// console.log(user);
+
+let someValue: any = "This is a string";
+
+let strLength: number = someValue.length;
+console.log(strLength);
+
+type Bird = {
   name: string;
-  role: UserRole;
-  contact: [string, string];
 };
 
-function createUser(user: User): User {
-  return user;
-}
+let birdString = '{"name": "Eagle"}';
+let dogString = '{"breed": "Poodle"}';
 
-const user: User = createUser({
-  id: 1,
-  name: "Tonmoy Zohani",
-  role: UserRole.Employee,
-  contact: ["zohani@gmail.com", "zohani0804"],
-});
+let birdObject = JSON.parse(birdString);
+let dogObject = JSON.parse(dogString);
 
-console.log(user);
+let bird = birdObject as Bird;
+let dog = dogObject as Bird;
+
+console.log(bird);
+console.log(dog);
