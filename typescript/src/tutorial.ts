@@ -409,22 +409,59 @@
 // console.log(randomPerson[0]);
 // console.log(randomPerson[1])
 
-enum ServerResponseStatus {
-  Success = 200,
-  Error = "Error",
+// enum ServerResponseStatus {
+//   Success = 200,
+//   Error = "Error",
+// }
+
+// interface ServerResponse {
+//   result: ServerResponseStatus;
+//   data: string[];
+// }
+
+// function getServerResponse(): ServerResponse {
+//   return {
+//     result: ServerResponseStatus.Success,
+//     data: ["first item", "second item"],
+//   };
+// }
+
+// const response: ServerResponse = getServerResponse();
+// console.log(response);
+
+// enum ServerResponseStatus {
+//   Success = 200,
+//   Error = 500,
+// }
+
+// Object.values(ServerResponseStatus).forEach((value) => {
+//   if (typeof value === "number") {
+//     console.log(value);
+//   }
+// });
+
+enum UserRole {
+  Admin,
+  Manager,
+  Employee,
 }
 
-interface ServerResponse {
-  result: ServerResponseStatus;
-  data: string[];
+type User = {
+  id: number;
+  name: string;
+  role: UserRolem;
+  contact: [string, string];
+};
+
+function createUser(user: User): User {
+  return user;
 }
 
-function getServerResponse(): ServerResponse {
-  return {
-    result: ServerResponseStatus.Success,
-    data: ["first item", "second item"],
-  };
-}
+const user: User = createUser({
+  id: 1,
+  name: "Tonmoy Zohani",
+  role: UserRole.Employee,
+  contact: ["zohani@gmail.com", "zohani0804"],
+});
 
-const response: ServerResponse = getServerResponse();
-console.log(response);
+console.log(user);
