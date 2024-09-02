@@ -449,7 +449,7 @@ enum UserRole {
 type User = {
   id: number;
   name: string;
-  role: UserRolem;
+  role: UserRole;
   contact: [string, string];
 };
 
