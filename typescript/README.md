@@ -1608,6 +1608,8 @@ function isStudent(person: Person): person is Student {
   return (person as Student).study !== undefined;
 }
 
+// person is Student is a type predicate. It tells TypeScript, "If this function returns true, then the variable person should be treated as a Student within the scope where this function is used.
+
 // Usage
 
 if (isStudent(person)) {
