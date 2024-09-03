@@ -494,25 +494,25 @@
 
 // console.log(Status.Pending);
 
-type User = {
-  name: string;
-  status: Status;
-};
+// type User = {
+//   name: string;
+//   status: Status;
+// };
 
-const statusValue = "pending";
-const user: User = { name: "Tonmoy", status: statusValue as Status };
-console.log(user);
+// const statusValue = "pending";
+// const user: User = { name: "Tonmoy", status: statusValue as Status };
+// console.log(user);
 
-enum Color {
-  Red,
-  Blue,
-}
+// enum Color {
+//   Red,
+//   Blue,
+// }
 
-function getColorName(color: Color): Color {
-  return color
-}
+// function getColorName(color: Color): Color {
+//   return color
+// }
 
-console.log(getColorName(Color.Red));
+// console.log(getColorName(Color.Red));
 
 // type ValueType = string | number | boolean;
 
