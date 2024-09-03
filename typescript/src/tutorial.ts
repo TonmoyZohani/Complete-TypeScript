@@ -494,45 +494,45 @@
 
 // console.log(Status.Pending);
 
-// type User = {
-//   name: string;
-//   status: Status;
-// };
+type User = {
+  name: string;
+  status: Status;
+};
 
-// const statusValue = "pending";
-// const user: User = { name: "Tonmoy", status: statusValue as Status };
-// console.log(user);
+const statusValue = "pending";
+const user: User = { name: "Tonmoy", status: statusValue as Status };
+console.log(user);
 
-// enum Color {
-//   Red,
-//   Blue,
-// }
-
-// function getColorName(color: Color): Color {
-//   return color
-// }
-
-// console.log(getColorName(Color.Red));
-
-type ValueType = string | number | boolean;
-
-let value: ValueType;
-const random = Math.random();
-
-value = random < 0.33 ? "Hello" : random < 0.66 ? 123.653 : true;
-
-function checkValue(value: ValueType) {
-  if (typeof value === "string") {
-    console.log(value.toLowerCase());
-    return;
-  }
-
-  if (typeof value === "number") {
-    console.log(value.toFixed(2));
-    return;
-  }
-
-  console.log(`boolean:${value}`);
+enum Color {
+  Red,
+  Blue,
 }
 
-checkValue(value);
+function getColorName(color: Color): Color {
+  return color
+}
+
+console.log(getColorName(Color.Red));
+
+// type ValueType = string | number | boolean;
+
+// let value: ValueType;
+// const random = Math.random();
+
+// value = random < 0.33 ? "Hello" : random < 0.66 ? 123.653 : true;
+
+// function checkValue(value: ValueType) {
+//   if (typeof value === "string") {
+//     console.log(value.toLowerCase());
+//     return;
+//   }
+
+//   if (typeof value === "number") {
+//     console.log(value.toFixed(2));
+//     return;
+//   }
+
+//   console.log(`boolean:${value}`);
+// }
+
+// checkValue(value);
