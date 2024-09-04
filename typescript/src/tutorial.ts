@@ -536,3 +536,7 @@
 // }
 
 // checkValue(value);
+
+function identity<T>(arg: T): T {
+    return arg;
+}
