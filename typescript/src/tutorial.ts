@@ -550,3 +550,21 @@ function getFirstElement<T>(arr: T[]): T {
 
 let firstString = getFirstElement<string>(["apple", "banana", "cherry"]);
 let firstNumber = getFirstElement<number>([1, 2, 3, 4, 5]);
+
+class Box<T> {
+    content: T;
+
+    constructor(content: T) {
+        this.content = content;
+    }
+
+    getContent(): T {
+        return this.content;
+    }
+}
+
+let stringBox = new Box<string>("A string");
+let numberBox = new Box<number>(100);
+
+console.log(stringBox.getContent()); // "A string"
+console.log(numberBox.getContent()); // 100
