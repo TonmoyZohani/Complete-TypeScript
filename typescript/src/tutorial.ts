@@ -550,3 +550,12 @@
 
 // let firstString = getFirstElement<string>(["apple", "banana", "cherry"]);
 // let firstNumber = getFirstElement<number>([1, 2, 3, 4, 5]);
+
+function genericFunction<T>(arg: T): T {
+  return arg;
+}
+
+const someStringValue = genericFunction<string>("Hello World");
+const someNumberValue = genericFunction<number>(2);
+
+
