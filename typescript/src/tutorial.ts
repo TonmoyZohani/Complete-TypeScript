@@ -560,3 +560,15 @@ const someNumberValue = genericFunction<number>(2);
 
 console.log(someNumberValue);
 console.log(someStringValue);
+
+interface GenericInterface<T> {
+  value: T;
+  getValue: () => T;
+}
+
+const genericString: GenericInterface<string> = {
+  value: "Hello World",
+  getValue() {
+    return this.value;
+  },
+};
