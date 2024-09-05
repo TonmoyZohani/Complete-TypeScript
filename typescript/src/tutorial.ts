@@ -558,4 +558,5 @@ function genericFunction<T>(arg: T): T {
 const someStringValue = genericFunction<string>("Hello World");
 const someNumberValue = genericFunction<number>(2);
 
-
+console.log(someNumberValue);
+console.log(someStringValue);
