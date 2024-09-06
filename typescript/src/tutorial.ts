@@ -579,18 +579,22 @@
 
 // const result = someFunc();
 
-function generateStringArray(length: number, value: string): string[] {
-  let result: string[] = [];
-  result = Array(length).fill(value);
-  return result;
+// function generateStringArray(length: number, value: string): string[] {
+//   let result: string[] = [];
+//   result = Array(length).fill(value);
+//   return result;
+// }
+
+// console.log(generateStringArray(3, "Allah"));
+
+// function createArray<T>(length: number, value: T): T[] {
+//   let result: T[] = [];
+//   result = Array(length).fill(value);
+//   return result;
+// }
+
+// console.log(createArray<string>(3, "Muhammad (PBUH)"));
+
+function pair<T, U>(param1: T, param2: U): [T, U] {
+  return [param1, param2];
 }
-
-console.log(generateStringArray(3, "Allah"));
-
-function createArray<T>(length: number, value: T): T[] {
-  let result: T[] = [];
-  result = Array(length).fill(value);
-  return result;
-}
-
-console.log(createArray<string>(3, "Muhammad (PBUH)"));
