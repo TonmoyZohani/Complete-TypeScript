@@ -599,40 +599,55 @@
 //   return [param1, param2];
 // }
 
-type Car = {
-  brand: string;
-  model: string;
-};
+// type Car = {
+//   brand: string;
+//   model: string;
+// };
 
-const car: Car = {
-  brand: "ford",
-  model: "mustang",
-};
+// const car: Car = {
+//   brand: "ford",
+//   model: "mustang",
+// };
 
-type Product = {
-  name: string;
-  price: number;
-};
+// type Product = {
+//   name: string;
+//   price: number;
+// };
 
-const product: Product = {
-  name: "shoes",
-  price: 1.99,
-};
+// const product: Product = {
+//   name: "shoes",
+//   price: 1.99,
+// };
 
-type Student = {
-  name: string;
-  age: number;
-};
+// type Student = {
+//   name: string;
+//   age: number;
+// };
 
-const student: Student = {
-  name: "peter",
-  age: 20,
-};
+// const student: Student = {
+//   name: "peter",
+//   age: 20,
+// };
 
-function printName<T extends { name: string }>(input: T): void {
-  console.log(input.name);
+// function printName<T extends { name: string }>(input: T): void {
+//   console.log(input.name);
+// }
+
+// printName(student);
+// printName(product);
+// printName(car);
+
+interface StoreData<T = any> {
+  data: T[];
 }
 
-printName(student);
-printName(product);
-printName(car);
+const storeNumbers: StoreData<number> = {
+  data: [2, 5, 1, 4],
+};
+
+const randomStaff: StoreData = {
+  data: ["random", 2, 4],
+};
+
+console.log(storeNumbers);
+console.log(randomStaff);
