@@ -710,3 +710,8 @@ async function fetchData(url: string): Promise<Tour[]> {
     return [];
   }
 }
+
+const tours = await fetchData(url);
+tours.map((tour) => {
+  console.log(tour.name);
+});
