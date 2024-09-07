@@ -637,17 +637,17 @@
 // printName(product);
 // printName(car);
 
-interface StoreData<T = any> {
-  data: T[];
-}
+// interface StoreData<T = any> {
+//   data: T[];
+// }
 
-const storeNumbers: StoreData<number> = {
-  data: [2, 5, 1, 4],
-};
+// const storeNumbers: StoreData<number> = {
+//   data: [2, 5, 1, 4],
+// };
 
-const randomStaff: StoreData = {
-  data: ["random", 2, 4],
-};
+// const randomStaff: StoreData = {
+//   data: ["random", 2, 4],
+// };
 
-console.log(storeNumbers);
-console.log(randomStaff);
+// console.log(storeNumbers);
+// console.log(randomStaff);
