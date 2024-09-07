@@ -673,3 +673,8 @@ async function fetchData(url: string) {
     return [];
   }
 }
+
+const tours = await fetchData(url);
+tours.map((tour: any) => {
+  console.log(tour.name);
+});
