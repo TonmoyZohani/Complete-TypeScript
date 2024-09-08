@@ -727,3 +727,10 @@
 // }
 
 // const deepWork = new Book("deep work","cal newport");
+
+class Book {
+  public readonly title: string;
+  public author: string;
+  private checkedOut: boolean = false;
+ 
+}
