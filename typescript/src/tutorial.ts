@@ -733,14 +733,14 @@ class Book {
   public author: string;
   private checkedOut: boolean = false;
 
-  constructor(title:string,author:string)}{
+  constructor(title:string,author:string){
     this.title = title;
-    this.authon = author;
+    this.author = author;
   }
 
-  // public checkOut(){
-  //   this.checkedOut
-  // }
+  public checkOut(){
+    this.checkedOut = this.toggleCheckedOutStatus()
+  }
 
   public isCheckedOut(){
     return this.checkedOut;
@@ -750,3 +750,9 @@ class Book {
     return !this.checkedOut;
   }
 }
+
+const deepWork = new Book("Lal Sontrash","Rajnitir Moulana");
+
+console.log(deepWork.isCheckedOut()); // false
+deepWork.checkOut();
+console.log(deepWork.isCheckedOut()); // true
