@@ -735,6 +735,18 @@ class Book {
 
   constructor(title:string,author:string)}{
     this.title = title;
-    
+    this.authon = author;
+  }
+
+  // public checkOut(){
+  //   this.checkedOut
+  // }
+
+  public isCheckedOut(){
+    return this.checkedOut;
+  }
+
+  private toggleCheckedOutStatus(){
+    return !this.checkedOut;
   }
 }
