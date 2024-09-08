@@ -729,8 +729,12 @@
 // const deepWork = new Book("deep work","cal newport");
 
 class Book {
-  public readonly title: string;
+  public title: string;
   public author: string;
   private checkedOut: boolean = false;
- 
+
+  constructor(title:string,author:string)}{
+    this.title = title;
+    
+  }
 }
