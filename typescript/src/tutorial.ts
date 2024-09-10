@@ -779,6 +779,6 @@ class Book {
 
 const deepWork = new Book("deep work", "cal newport");
 console.log(deepWork.info);
-// deepWork.checkOut = true;
-console.log(deepWork.someInfo);
-console.log(deepWork.checkOut);
+// // deepWork.checkOut = true;
+// console.log(deepWork.someInfo);
+// console.log(deepWork.checkOut);
