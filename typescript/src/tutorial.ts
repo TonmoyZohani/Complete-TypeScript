@@ -728,31 +728,31 @@
 
 // const deepWork = new Book("deep work","cal newport");
 
-class Book {
-  public title: string;
-  public author: string;
-  private checkedOut: boolean = false;
+// class Book {
+//   public title: string;
+//   public author: string;
+//   private checkedOut: boolean = false;
 
-  constructor(title:string,author:string){
-    this.title = title;
-    this.author = author;
-  }
+//   constructor(title:string,author:string){
+//     this.title = title;
+//     this.author = author;
+//   }
 
-  public checkOut(){
-    this.checkedOut = this.toggleCheckedOutStatus()
-  }
+//   public checkOut(){
+//     this.checkedOut = this.toggleCheckedOutStatus()
+//   }
 
-  public isCheckedOut(){
-    return this.checkedOut;
-  }
+//   public isCheckedOut(){
+//     return this.checkedOut;
+//   }
 
-  private toggleCheckedOutStatus(){
-    return !this.checkedOut;
-  }
-}
+//   private toggleCheckedOutStatus(){
+//     return !this.checkedOut;
+//   }
+// }
 
-const deepWork = new Book("Lal Sontrash","Rajnitir Moulana");
+// const deepWork = new Book("Lal Sontrash","Rajnitir Moulana");
 
-console.log(deepWork.isCheckedOut()); // false
-deepWork.checkOut();
-console.log(deepWork.isCheckedOut()); // true
+// console.log(deepWork.isCheckedOut()); // false
+// deepWork.checkOut();
+// console.log(deepWork.isCheckedOut()); // true
