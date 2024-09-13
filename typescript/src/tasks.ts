@@ -2,7 +2,7 @@
 // btn.disabled = true;
 
 const taskForm = document.querySelector<HTMLFormElement>(".form");
-const formData = document.querySelector<HTMLInputElement>(".form-input");
+const formInput = document.querySelector<HTMLInputElement>(".form-input");
 
 const taskListElement = document.querySelector<HTMLUListElement>(".list");
 
@@ -12,3 +12,15 @@ type Task = {
 };
 
 const tasks: Task[] = [];
+
+taskForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const taskDescription = formInput?.value;
+
+  if (taskDescription) {
+    formInput.value = "";
+    return;
+  }
+
+  alert("Please enter a task description");
+});
