@@ -27,6 +27,8 @@ function createTask(event: SubmitEvent) {
 
     addTask(task);
 
+    renderTask(task)
+
     formInput.value = "";
     return;
   }
@@ -37,4 +39,10 @@ function createTask(event: SubmitEvent) {
 function addTask(task: Task): void {
   tasks.push(task);
   console.log(tasks);
+}
+
+function renderTask(task:Task):void{
+    const taskElement = document.createElement("li");
+    taskElement.textContent = task.description;
+    taskListElement?.appendChild(taskElement)
 }
