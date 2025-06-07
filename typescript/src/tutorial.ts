@@ -30,8 +30,29 @@
 // status = "success";
 // console.log(status);
 
-/***************Array****************** */
+/*******************Array****************** */
 
-let randomArr: (number | string)[] = ["Tonmoy", 12];
+// let randomArr: (number | string)[] = ["Tonmoy", 12];
+// console.log("Print", randomArr);
 
-console.log("Print", randomArr);
+/*******************Objects****************** */
+
+// let car: { brand: string; year: number } = { brand: "Toyota", year: 1984 };
+// console.log("Print", car);
+
+type Person = {
+  name: string;
+  age?: number;
+};
+
+const person1: Person = {
+  name: "Tonmoy",
+  age: 28,
+};
+
+const person2: Person = {
+  name: "Karim",
+};
+
+console.log("Print", person1);
+console.log("Print", person2);
