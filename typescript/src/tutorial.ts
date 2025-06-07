@@ -73,15 +73,29 @@
 //   console.log(`Not in the list`);
 // }
 
-const calculatePrice = (price: number, discount?: number): number => {
-  return price - (discount || 0);
+// const calculatePrice = (price: number, discount?: number): number => {
+//   return price - (discount || 0);
+// };
+
+// let priceAfterDiscount = calculatePrice(200, 20);
+// console.log(priceAfterDiscount);
+
+// const calculateScore = (initialScore: number, penaltyPoints: number = 0) => {
+//   return initialScore - penaltyPoints;
+// };
+
+// console.log(calculateScore(250));
+
+const sum = (message: string, ...numbers: number[]): string => {
+  const doubled = numbers.map((num) => num * 2);
+  console.log(doubled);
+
+  let total = numbers.reduce((prev, crr) => {
+    return prev + crr;
+  }, 0);
+
+  return `${message}: ${total}`;
 };
 
-let priceAfterDiscount = calculatePrice(200, 20);
-console.log(priceAfterDiscount);
-
-const calculateScore = (initialScore: number, penaltyPoints: number = 0) => {
-  return initialScore - penaltyPoints;
-};
-
-console.log(calculateScore(250));
+let result = sum(`The total is`, 1, 2, 3, 4, 5);
+console.log(result);
