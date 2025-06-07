@@ -59,16 +59,29 @@
 
 /*******************Functions****************** */
 
-const names: string[] = ["Rasel", "Karim", "Zabir", "Hamim"];
+// const names: string[] = ["Rasel", "Karim", "Zabir", "Hamim"];
 
-const isNameInList = (name: string): boolean => {
-  return names.includes(name);
+// const isNameInList = (name: string): boolean => {
+//   return names.includes(name);
+// };
+
+// let givenName: string = "Karim";
+
+// if (isNameInList(givenName)) {
+//   console.log(`${givenName} in the list`);
+// } else {
+//   console.log(`Not in the list`);
+// }
+
+const calculatePrice = (price: number, discount?: number): number => {
+  return price - (discount || 0);
 };
 
-let givenName:string = 'Karim';
+let priceAfterDiscount = calculatePrice(200, 20);
+console.log(priceAfterDiscount);
 
-if(isNameInList(givenName)){
-  console.log(`${givenName} in the list`);
-}else{
-  console.log(`Not in the list`)
-}
+const calculateScore = (initialScore: number, penaltyPoints: number = 0) => {
+  return initialScore - penaltyPoints;
+};
+
+console.log(calculateScore(250));
