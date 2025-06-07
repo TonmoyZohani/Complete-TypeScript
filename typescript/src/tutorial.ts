@@ -40,19 +40,35 @@
 // let car: { brand: string; year: number } = { brand: "Toyota", year: 1984 };
 // console.log("Print", car);
 
-type Person = {
-  name: string;
-  age?: number;
+// type Person = {
+//   name: string;
+//   age?: number;
+// };
+
+// const person1: Person = {
+//   name: "Tonmoy",
+//   age: 28,
+// };
+
+// const person2: Person = {
+//   name: "Karim",
+// };
+
+// console.log("Print", person1);
+// console.log("Print", person2);
+
+/*******************Functions****************** */
+
+const names: string[] = ["Rasel", "Karim", "Zabir", "Hamim"];
+
+const isNameInList = (name: string): boolean => {
+  return names.includes(name);
 };
 
-const person1: Person = {
-  name: "Tonmoy",
-  age: 28,
-};
+let givenName:string = 'Karim';
 
-const person2: Person = {
-  name: "Karim",
-};
-
-console.log("Print", person1);
-console.log("Print", person2);
+if(isNameInList(givenName)){
+  console.log(`${givenName} in the list`);
+}else{
+  console.log(`Not in the list`)
+}
