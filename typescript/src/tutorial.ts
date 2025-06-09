@@ -176,30 +176,53 @@
 // printStaffDetails(tonmoy);
 // printStaffDetails(karim);
 
-interface Book {
-  readonly isbn: number;
-  title: string;
-  author: string;
-  genre?: string;
+// interface Book {
+//   readonly isbn: number;
+//   title: string;
+//   author: string;
+//   genre?: string;
 
-  //method
-  printAuthor(): void;
-  printTitle(message: string): string;
+//   //method
+//   printAuthor(): void;
+//   printTitle(message: string): string;
+// }
+
+// const deepWork: Book = {
+//   isbn: 9781455586691,
+//   title: "Deep Work",
+//   author: "Cal Newport",
+//   genre: "Self-help",
+
+//   printAuthor() {
+//     console.log(this.author);
+//   },
+//   printTitle(message) {
+//     return `${this.title} ${message}`;
+//   },
+// };
+
+// deepWork.printAuthor();
+// console.log(deepWork.printTitle("This is a game"));
+
+interface Computer {
+  readonly id: number;
+  brand: string;
+  ram: number;
+  upgradeRam(increase: number): number;
+  storage?: number;
 }
 
-const deepWork: Book = {
-  isbn: 9781455586691,
-  title: "Deep Work",
-  author: "Cal Newport",
-  genre: "Self-help",
-
-  printAuthor() {
-    console.log(this.author);
-  },
-  printTitle(message) {
-    return `${this.title} ${message}`;
+const laptop: Computer = {
+  id: 1,
+  brand: "Ryzen 5",
+  ram: 16,
+  upgradeRam(amount: number) {
+    this.ram += amount;
+    return this.ram;
   },
 };
 
-deepWork.printAuthor();
-console.log(deepWork.printTitle("This is a game"));
+laptop.storage = 256;
+
+console.log(laptop.upgradeRam(8));
+console.log(laptop);
