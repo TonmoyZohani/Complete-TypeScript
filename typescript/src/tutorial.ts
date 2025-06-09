@@ -153,25 +153,53 @@
 // value = "Tonmoy";
 // value = 52;
 
-type Employee = { id: number; name: string; department: string };
-type Manager = { id: number; name: string; employees: Employee[] };
-type Staff = Employee | Manager;
+// type Employee = { id: number; name: string; department: string };
+// type Manager = { id: number; name: string; employees: Employee[] };
+// type Staff = Employee | Manager;
 
-const printStaffDetails = (staff: Staff): void => {
-  if ("employees" in staff) {
-    console.log(
-      `${staff.name} is the manager who has ${staff.employees.length} employees`
-    );
-  } else {
-    console.log(
-      `${staff.name} is an employee in the ${staff.department} department.`
-    );
-  }
+// const printStaffDetails = (staff: Staff): void => {
+//   if ("employees" in staff) {
+//     console.log(
+//       `${staff.name} is the manager who has ${staff.employees.length} employees`
+//     );
+//   } else {
+//     console.log(
+//       `${staff.name} is an employee in the ${staff.department} department.`
+//     );
+//   }
+// };
+
+// const karim: Employee = { id: 1, name: "Karim", department: "IT" };
+// const selim: Employee = { id: 2, name: "Selim", department: "Sales" };
+// const tonmoy: Manager = { id: 3, name: "Tonmoy", employees: [karim, selim] };
+
+// printStaffDetails(tonmoy);
+// printStaffDetails(karim);
+
+interface Book {
+  readonly isbn: number;
+  title: string;
+  author: string;
+  genre?: string;
+
+  //method
+  printAuthor(): void;
+  printTitle(message: string): string;
+}
+
+const deepWork: Book = {
+  isbn: 9781455586691,
+  title: "Deep Work",
+  author: "Cal Newport",
+  genre: "Self-help",
+
+  printAuthor() {
+    console.log(this.author);
+  },
+  printTitle(message) {
+    return `${this.title} ${message}`;
+  },
 };
 
-const karim: Employee = { id: 1, name: "Karim", department: "IT" };
-const selim: Employee = { id: 2, name: "Selim", department: "Sales" };
-const tonmoy: Manager = { id: 3, name: "Tonmoy", employees: [karim, selim] };
-
-printStaffDetails(tonmoy);
-printStaffDetails(karim);
+deepWork.printAuthor();
+console.log(deepWork.printTitle("This is a game"));
