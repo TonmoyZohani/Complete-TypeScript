@@ -280,31 +280,71 @@
 
 /*******************Enums****************** */
 
-enum UserRole {
-  Admin = 200,
-  Manager,
-  Employee,
+// enum UserRole {
+//   Admin = 200,
+//   Manager,
+//   Employee,
+// }
+
+// // Define a type alias named User
+// type User = {
+//   id: number;
+//   name: string;
+//   role: UserRole;
+//   contact: [string, string]; // Tuple: [email, phone]
+// };
+
+// // Define a function named createUser
+// function createUser(user: User): User {
+//   return user;
+// }
+
+// // Call the createUser function
+// const user: User = createUser({
+//   id: 1,
+//   name: "John Doe",
+//   role: UserRole.Admin,
+//   contact: ["john.doe@example.com", "123-456-7890"],
+// });
+
+// console.log(user);
+
+interface Accessory {
+  brand: string;
 }
 
-// Define a type alias named User
-type User = {
-  id: number;
-  name: string;
-  role: UserRole;
-  contact: [string, string]; // Tuple: [email, phone]
+class Necklace implements Accessory {
+  kind: string;
+  brand: string;
+  constructor(brand: string, kind: string) {
+    this.brand = brand;
+    this.kind = kind;
+  }
+}
+
+class Bracelet implements Accessory {
+  brand: string;
+  year: number;
+  constructor(brand: string, year: number) {
+    this.brand = brand;
+    this.year = year;
+  }
+}
+
+const getRandomAccessory = (): Accessory => {
+  return Math.random() < 0.5
+    ? new Bracelet("Cartier", 2021)
+    : new Necklace("TASAKI", "Choker");
 };
 
-// Define a function named createUser
-function createUser(user: User): User {
-  return user;
+let accessory = getRandomAccessory();
+
+console.log(accessory)
+
+if (accessory instanceof Bracelet) {
+  console.log("Bracelet year:", accessory.year);
 }
 
-// Call the createUser function
-const user: User = createUser({
-  id: 1,
-  name: "John Doe",
-  role: UserRole.Admin,
-  contact: ["john.doe@example.com", "123-456-7890"],
-});
-
-console.log(user);
+if (accessory instanceof Necklace) {
+  console.log("Necklace brand:", accessory.brand);
+}
