@@ -86,16 +86,92 @@
 
 // console.log(calculateScore(250));
 
-const sum = (message: string, ...numbers: number[]): string => {
-  const doubled = numbers.map((num) => num * 2);
-  console.log(doubled);
+// const sum = (message: string, ...numbers: number[]): string => {
+//   const doubled = numbers.map((num) => num * 2);
+//   console.log(doubled);
 
-  let total = numbers.reduce((prev, crr) => {
-    return prev + crr;
-  }, 0);
+//   let total = numbers.reduce((prev, crr) => {
+//     return prev + crr;
+//   }, 0);
 
-  return `${message}: ${total}`;
+//   return `${message}: ${total}`;
+// };
+
+// let result = sum(`The total is`, 1, 2, 3, 4, 5);
+// console.log(result);
+
+// const createStudent = (student: { id: number; name: string }): void => {
+//   console.log(`Welcome ${student?.name.toUpperCase()} to our course...`);
+// };
+
+// const newStudent = {
+//   name: "Tonmoy",
+//   id: 846,
+// };
+
+// createStudent(newStudent);
+
+// const processData = (
+//   input: string | number,
+//   config: { reverse: boolean } = { reverse: false }
+// ): any => {
+//   if (typeof input === "number") {
+//     return input * input;
+//   } else {
+//     return input.toUpperCase();
+//   }
+// };
+
+// console.log(processData(10, { reverse: true }));
+
+/*******************Type Alias****************** */
+
+// const john: { name: string; id: number; isActive: boolean } = {
+//   id: 1,
+//   name: "John",
+//   isActive: true,
+// };
+
+// const susan: { name: string; id: number; isActive: boolean } = {
+//   id: 2,
+//   name: "Susan",
+//   isActive: false,
+// };
+
+// const createUser = (user: {
+//   name: string;
+//   id: number;
+//   isActive: boolean;
+// }): { name: string; id: number; isActive: boolean } => {
+//   return `Hello ${user.name},your is is ${user.id}`;
+// };
+
+// console.log(createUser(susan));
+
+// type StringOrNumber = string | number;
+// let value: StringOrNumber;
+// value = "Tonmoy";
+// value = 52;
+
+type Employee = { id: number; name: string; department: string };
+type Manager = { id: number; name: string; employees: Employee[] };
+type Staff = Employee | Manager;
+
+const printStaffDetails = (staff: Staff): void => {
+  if ("employees" in staff) {
+    console.log(
+      `${staff.name} is the manager who has ${staff.employees.length} employees`
+    );
+  } else {
+    console.log(
+      `${staff.name} is an employee in the ${staff.department} department.`
+    );
+  }
 };
 
-let result = sum(`The total is`, 1, 2, 3, 4, 5);
-console.log(result);
+const karim: Employee = { id: 1, name: "Karim", department: "IT" };
+const selim: Employee = { id: 2, name: "Selim", department: "Sales" };
+const tonmoy: Manager = { id: 3, name: "Tonmoy", employees: [karim, selim] };
+
+printStaffDetails(tonmoy);
+printStaffDetails(karim);
