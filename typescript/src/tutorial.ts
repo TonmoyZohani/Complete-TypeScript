@@ -204,25 +204,62 @@
 // deepWork.printAuthor();
 // console.log(deepWork.printTitle("This is a game"));
 
-interface Computer {
-  readonly id: number;
-  brand: string;
-  ram: number;
-  upgradeRam(increase: number): number;
-  storage?: number;
+// interface Computer {
+//   readonly id: number;
+//   brand: string;
+//   ram: number;
+//   upgradeRam(increase: number): number;
+//   storage?: number;
+// }
+
+// const laptop: Computer = {
+//   id: 1,
+//   brand: "Ryzen 5",
+//   ram: 16,
+//   upgradeRam(amount: number) {
+//     this.ram += amount;
+//     return this.ram;
+//   },
+// };
+
+// laptop.storage = 256;
+
+// console.log(laptop.upgradeRam(8));
+// console.log(laptop);
+
+interface Person {
+  name: string;
 }
 
-const laptop: Computer = {
-  id: 1,
-  brand: "Ryzen 5",
-  ram: 16,
-  upgradeRam(amount: number) {
-    this.ram += amount;
-    return this.ram;
-  },
-};
+interface DogOwner extends Person {
+  dogName: string;
+}
 
-laptop.storage = 256;
+interface Manager extends Person {
+  managePeople(): void;
+  delegateTasks(): void;
+}
 
-console.log(laptop.upgradeRam(8));
-console.log(laptop);
+const employee: Person | DogOwner | Manager = getEmployee();
+console.log(employee);
+
+function getEmployee(): Person | DogOwner | Manager {
+  const random = Math.random();
+
+  if (random < 0.33) {
+    return {
+      name: "john",
+    };
+  } else if (random < 0.66) {
+    return {
+      name: "sarah",
+      dogName: "Rex",
+    };
+  } else {
+    return {
+      name: "bob",
+      managePeople: () => console.log("Managing people..."),
+      delegateTasks: () => console.log("Delegating tasks..."),
+    };
+  }
+}
