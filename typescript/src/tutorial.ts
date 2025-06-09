@@ -227,39 +227,84 @@
 // console.log(laptop.upgradeRam(8));
 // console.log(laptop);
 
-interface Person {
+// interface Person {
+//   name: string;
+// }
+
+// interface DogOwner extends Person {
+//   dogName: string;
+// }
+
+// interface Manager extends Person {
+//   managePeople(): void;
+//   delegateTasks(): void;
+// }
+
+// const employee: Person | DogOwner | Manager = getEmployee();
+// console.log(employee);
+
+// function getEmployee(): Person | DogOwner | Manager {
+//   const random = Math.random();
+
+//   if (random < 0.33) {
+//     return {
+//       name: "john",
+//     };
+//   } else if (random < 0.66) {
+//     return {
+//       name: "sarah",
+//       dogName: "Rex",
+//     };
+//   } else {
+//     return {
+//       name: "bob",
+//       managePeople: () => console.log("Managing people..."),
+//       delegateTasks: () => console.log("Delegating tasks..."),
+//     };
+//   }
+// }
+
+// let person: [string, number] = ["john", 25];
+// console.log(person[0]);
+// console.log(person[1]);
+
+// let john: [string, number?] = ["john"];
+
+// function getPerson(): [string, number] {
+//   return ["john", 25];
+// }
+
+// let randomPerson = getPerson();
+// console.log(randomPerson[0]);
+// console.log(randomPerson[1]);
+
+/*******************Enums****************** */
+
+enum UserRole {
+  Admin = 200,
+  Manager,
+  Employee,
+}
+
+// Define a type alias named User
+type User = {
+  id: number;
   name: string;
+  role: UserRole;
+  contact: [string, string]; // Tuple: [email, phone]
+};
+
+// Define a function named createUser
+function createUser(user: User): User {
+  return user;
 }
 
-interface DogOwner extends Person {
-  dogName: string;
-}
+// Call the createUser function
+const user: User = createUser({
+  id: 1,
+  name: "John Doe",
+  role: UserRole.Admin,
+  contact: ["john.doe@example.com", "123-456-7890"],
+});
 
-interface Manager extends Person {
-  managePeople(): void;
-  delegateTasks(): void;
-}
-
-const employee: Person | DogOwner | Manager = getEmployee();
-console.log(employee);
-
-function getEmployee(): Person | DogOwner | Manager {
-  const random = Math.random();
-
-  if (random < 0.33) {
-    return {
-      name: "john",
-    };
-  } else if (random < 0.66) {
-    return {
-      name: "sarah",
-      dogName: "Rex",
-    };
-  } else {
-    return {
-      name: "bob",
-      managePeople: () => console.log("Managing people..."),
-      delegateTasks: () => console.log("Delegating tasks..."),
-    };
-  }
-}
+console.log(user);
