@@ -309,42 +309,53 @@
 
 // console.log(user);
 
-interface Accessory {
-  brand: string;
+// interface Accessory {
+//   brand: string;
+// }
+
+// class Necklace implements Accessory {
+//   kind: string;
+//   brand: string;
+//   constructor(brand: string, kind: string) {
+//     this.brand = brand;
+//     this.kind = kind;
+//   }
+// }
+
+// class Bracelet implements Accessory {
+//   brand: string;
+//   year: number;
+//   constructor(brand: string, year: number) {
+//     this.brand = brand;
+//     this.year = year;
+//   }
+// }
+
+// const getRandomAccessory = (): Accessory => {
+//   return Math.random() < 0.5
+//     ? new Bracelet("Cartier", 2021)
+//     : new Necklace("TASAKI", "Choker");
+// };
+
+// let accessory = getRandomAccessory();
+
+// console.log(accessory)
+
+// if (accessory instanceof Bracelet) {
+//   console.log("Bracelet year:", accessory.year);
+// }
+
+// if (accessory instanceof Necklace) {
+//   console.log("Necklace brand:", accessory.brand);
+// }
+
+function StudentId(x: string | number) {
+    if (typeof x == 'string') {
+        console.log('Student');
+    }
+    if (typeof x === 'number') {
+        console.log('Id');
+    }
 }
-
-class Necklace implements Accessory {
-  kind: string;
-  brand: string;
-  constructor(brand: string, kind: string) {
-    this.brand = brand;
-    this.kind = kind;
-  }
-}
-
-class Bracelet implements Accessory {
-  brand: string;
-  year: number;
-  constructor(brand: string, year: number) {
-    this.brand = brand;
-    this.year = year;
-  }
-}
-
-const getRandomAccessory = (): Accessory => {
-  return Math.random() < 0.5
-    ? new Bracelet("Cartier", 2021)
-    : new Necklace("TASAKI", "Choker");
-};
-
-let accessory = getRandomAccessory();
-
-console.log(accessory)
-
-if (accessory instanceof Bracelet) {
-  console.log("Bracelet year:", accessory.year);
-}
-
-if (accessory instanceof Necklace) {
-  console.log("Necklace brand:", accessory.brand);
-}
+StudentId(`446`); //prints Student
+StudentId(446); //prints Id
