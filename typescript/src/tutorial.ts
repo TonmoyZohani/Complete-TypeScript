@@ -349,13 +349,37 @@
 //   console.log("Necklace brand:", accessory.brand);
 // }
 
-function StudentId(x: string | number) {
-    if (typeof x == 'string') {
-        console.log('Student');
-    }
-    if (typeof x === 'number') {
-        console.log('Id');
-    }
-}
-StudentId(`446`); //prints Student
-StudentId(446); //prints Id
+// function StudentId(x: string | number) {
+//     if (typeof x == 'string') {
+//         console.log('Student');
+//     }
+//     if (typeof x === 'number') {
+//         console.log('Id');
+//     }
+// }
+// StudentId(`446`); //prints Student
+// StudentId(446); //prints Id
+
+type RGB = {
+  r: number;
+  g: number;
+  b: number;
+};
+
+type HSL = {
+  h: number;
+  s: number;
+  l: number;
+};
+
+const colors: (RGB | HSL)[] = [
+  { r: 255, g: 0, b: 0 }, // Red in RGB
+  { h: 0, s: 100, l: 50 }, // Red in HSL
+  { r: 0, g: 255, b: 0 }, // Green in RGB
+  { h: 120, s: 100, l: 50 }, // Green in HSL
+  { r: 0, g: 0, b: 255 }, // Blue in RGB
+  { h: 240, s: 100, l: 50 }, // Blue in HSL
+];
+
+const student: [number, string, boolean] = [1251, "Tonmoy", true];
+console.log(student);
